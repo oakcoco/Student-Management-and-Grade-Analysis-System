@@ -57,7 +57,7 @@
     .card-metric{
         border: none;
         border-radius: 12px;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.164);
         transition: transform 0.2s;
     }
     .card-metric .card-body{
@@ -134,4 +134,19 @@
     .badge-activity{
         font-size: 0.7rem;
         padding: 4px 8px;
+    }
+
+    /* STUDENT INFORMATION */
+    .student-container{
+        border: none;
+        border-radius: 12px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.219);
+        transition: transform 0.2s;
+    }
+    /* FIX PLEASE  */
+    .top-card-container{
+        border: absolute;
+        border-radius: 12px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.342);
+        transition: transform 0.2s;
     }

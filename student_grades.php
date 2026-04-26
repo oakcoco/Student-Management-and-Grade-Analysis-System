@@ -25,5 +25,62 @@
             &nbsp;&nbsp;<a href="config/logout.php"class="btn btn-danger"><i class="bi bi-box-arrow-right"></i> Log Out</a>
         </div>
     </aside>
+    <main class = "main-content">
+        <div class = "container-fluid">
+            <h4 class="mb-4 fw-semibold">Student Grade Management <br><br></h4>
+            <div class="card top-card-container">
+                <div class="row mb-3 g-2 align-items-center">
+                    <div class="col-auto">
+                        <button type="button" class="btn btn-primary">Show All
+                        </button>
+                    </div>
+                    <div class="col">
+                        <div class="input-group">
+                            <span class="input-group-text bg-white border-end-0">
+                                <i class="bi bi-search"></i>
+                            </span>
+                            <input type="text" class="form-control border-start-0 ps-0" placeholder="Search students...">
+                        </div>
+                    </div>
+                    <div class="col-auto">
+                        <select class="form-select">
+                            <option selected disabled>Sort by</option>
+                            <option value="name">Name (Alphabetical)</option>
+                            <option value="id">Student ID (Specific)</option>
+                            <option value="grade">Average Grade (Ascending)</option>
+                            <option value="grade">Average Grade (Descending)</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card student-container">
+                <div class="card-body">
+                    <h6 class="card-title mb-4"><br>My Students</h6>
+                    <div class="d-flex align-items-center mb-3 p-3 border rounded">
+                        
+                        <div class="me-3">
+                            <div class="rounded-circle bg-secondary d-flex align-items-center justify-content-center" style="width: 50px; height: 50px;">
+                                <i class="bi bi-person-fill text-white fs-4"></i>
+                            </div>
+                        </div>
+                        
+                        <div class="flex-grow-1">
+                            <div class="fw-semibold">Junel, Dimatibag G.</div>
+                        </div>
+                        
+                        <div class="d-flex gap-2">
+                            <button type="button" class="btn btn-primary btn-sm">
+                                <i class="bi bi-eye"></i> View Grades
+                            </button>
+                            <button type="button" class="btn btn-warning btn-sm">
+                                <i class="bi bi-pencil"></i> Edit Grades
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
 </body>
 </html>
