@@ -28,7 +28,6 @@
     <main class = "main-content">
         <div class = "container-fluid">
             <h4 class="mb-4 fw-semibold">Student Grade Management <br><br></h4>
-            <div class="card top-card-container">
                 <div class="row mb-3 g-2 align-items-center">
                     <div class="col-auto">
                         <button type="button" class="btn btn-primary">Show All
@@ -52,8 +51,7 @@
                         </select>
                     </div>
                 </div>
-            </div>
-
+            
             <div class="card student-container">
                 <div class="card-body">
                     <h6 class="card-title mb-4"><br>My Students</h6>

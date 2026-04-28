@@ -1,5 +1,4 @@
 CREATE DATABASE IF NOT EXISTS school_management_project;
-CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 USE school_management_project;
 
 CREATE TABLE IF NOT EXISTS admin (
@@ -9,12 +8,14 @@ CREATE TABLE IF NOT EXISTS admin (
 `password` VARCHAR(255) NOT NULL,
 `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
+
 CREATE TABLE IF NOT EXISTS subjects (
 `id` INT AUTO_INCREMENT PRIMARY KEY,
 `subject_name` VARCHAR(50) NOT NULL,
 `subject_code` VARCHAR(20) UNIQUE NOT NULL,
 `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
+
 CREATE TABLE IF NOT EXISTS students (
 `id` INT AUTO_INCREMENT PRIMARY KEY,
 `first_name` VARCHAR(50) NOT NULL,
@@ -24,6 +25,7 @@ CREATE TABLE IF NOT EXISTS students (
 `grade_level` VARCHAR(20) NOT NULL,
 `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
+
 CREATE TABLE IF NOT EXISTS grades (
 `id` INT AUTO_INCREMENT PRIMARY KEY,
 `student_id` INT NOT NULL,
@@ -35,11 +37,23 @@ FOREIGN KEY (subject_id) REFERENCES subjects(id),
 UNIQUE KEY unique_grade (student_id, subject_id, grade_level)
 );
 
+CREATE TABLE IF NOT EXISTS activities (                                                                         
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT NOT NULL,
+    user_name VARCHAR(100) NOT NULL,
+    action VARCHAR(255) NOT NULL,
+    details VARCHAR(255) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
 INSERT INTO `admin` (`id`, `first_name`, `username`, `password`, `created_at`) VALUES
-(1, 'admin', '$2a$12$4gFiHGreq2GuiITdD5.bPODonA6lbm0nwOjyOSuuVTFHsR1QamHSW', '2026-04-25 01:30:45');
+(1, 'admin', 'admin', '$2a$12$4gFiHGreq2GuiITdD5.bPODonA6lbm0nwOjyOSuuVTFHsR1QamHSW', '2026-04-25 01:30:45');
 
 INSERT INTO `subjects` (`id`, `subject_name`, `subject_code`) VALUES
 (1, 'History', 'HIST-101');
+(2, 'Science', 'SCI-101');
+(3, 'Math'. 'MTH-101');
+(4, 'English', 'ENG-101');
 
 INSERT INTO `students` (`id`, `first_name`, `middle_name`, `last_name`, `email`, `grade_level`) VALUES
 (2026001, 'Jhong', 'Viernes', 'Hilario', 'jhonghilarious@domain.com', 'Grade 5');

@@ -1,3 +1,9 @@
+<?php
+  include 'config/db_connection.php';
+  $students = $conn->query("SELECT * FROM students ORDER BY last_name ASC");
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,31 +34,31 @@
     <main class = "main-content">
         <div class = "container-fluid">
             <h4 class="mb-4 fw-semibold">Student Information Management <br><br></h4>
-                <div class="card top-card-container">
-                    <div class="row mb-3 g-2 align-items-center">
-                        <div class="col-auto">
-                            <button type="button" class="btn btn-primary">Show All
-                            </button>
-                        </div>
-                        <div class="col">
-                            <div class="input-group">
-                                <span class="input-group-text bg-white border-end-0">
-                                    <i class="bi bi-search"></i>
-                                </span>
-                                <input type="text" class="form-control border-start-0 ps-0" placeholder="Search students...">
-                            </div>
-                        </div>
-                        <div class="col-auto">
-                            <select class="form-select">
-                                <option selected disabled>Sort by</option>
-                                <option value="name">Name (Alphabetical)</option>
-                                <option value="id">Student ID (Specific)</option>
-                                <option value="grade">Average Grade (Ascending)</option>
-                                <option value="grade">Average Grade (Descending)</option>
-                            </select>
+                
+                <div class="row mb-3 g-2 align-items-center">
+                    <div class="col-auto">
+                        <button type="button" class="btn btn-primary">Show All
+                        </button>
+                    </div>
+                    <div class="col">
+                        <div class="input-group">
+                            <span class="input-group-text bg-white border-end-0">
+                                <i class="bi bi-search"></i>
+                            </span>
+                            <input type="text" class="form-control border-start-0 ps-0" placeholder="Search students...">
                         </div>
                     </div>
+                    <div class="col-auto">
+                        <select class="form-select">
+                            <option selected disabled>Sort by</option>
+                            <option value="name">Name (Alphabetical)</option>
+                            <option value="id">Student ID (Specific)</option>
+                            <option value="grade">Average Grade (Ascending)</option>
+                            <option value="grade">Average Grade (Descending)</option>
+                        </select>
+                    </div>
                 </div>
+                
             
             <div class="student-info-card">
 
@@ -60,12 +66,16 @@
                 <div class="card student-container">
                     <div class="card-body">
 
-                        <!-- put +Add Student button -->
-                        <div class="title-side">
-                            <h6 class="card-title mb-4"><br>My Students:</h6>
-
+                        <!-- ADD STUDENT BUTTON PAGE LINKING NOT YET FIXED -->
+                        <div class="title-side d-flex justify-content-between align-items-center">
+                            <h6 class="card-title mb-4"><br>My Students:</h6>                   
+                            <button type="button" class="btn btn-success">
+                                <i class="bi bi-plus-circle"></i> Add Student 
+                            </button>
                         </div>
-
+                        
+                        <?php while ($studentName = $students->fetch_assoc()): ?>
+                        
                         <div class="d-flex align-items-center mb-3 p-3 border rounded">
                             
                             <div class="me-3">
@@ -75,7 +85,16 @@
                             </div>
                             
                             <div class="flex-grow-1">
-                                <div class="fw-semibold">Junel, Dimatibag G.</div>
+                                <div class="fw-semibold">
+                                <?php echo $studentName["last_name"] 
+                                        . ', ' 
+                                        . $studentName["first_name"]
+                                        . ' ' 
+                                        . $studentName["middle_name"]
+                                        ?> 
+                                    
+                                <?php endwhile; ?>
+                                </div>
                             </div>
                             
                             <div class="d-flex gap-2">

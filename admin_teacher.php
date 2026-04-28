@@ -4,6 +4,17 @@
       header("Location: login.php");
       exit;
   }
+
+include 'config/db_connection.php';
+$totalStudents = $conn -> query("SELECT COUNT(*) as count FROM students") -> fetch_assoc()['count'];
+$totalSubjects =  $conn -> query("SELECT COUNT(*) as count FROM subjects") -> fetch_assoc()['count'];
+
+//vvv STILL ON DEVELOPMENT VVV
+// $studentsFailed = $conn->query("SELECT COUNT(DISTINCT student_id) as count FROM grades WHERE grade <
+//   75")->fetch_assoc()['count'];
+
+
+
   
 $page = $_GET['page'] ?? 'dashboard';
 
@@ -15,7 +26,7 @@ switch ($page){
         include 'student_grades.php';
         exit;
 }
-  ?>
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -61,8 +72,10 @@ switch ($page){
                                 <i class="bi bi-people-fill"></i>
                             </div>
                             <div>
-                                <div class="total-students">123</div>
-                                <div class="metric-label">Total Students</div>
+                                <div class="total-students"><?php echo $totalStudents ?></div>
+                                <div class="metric-label">Total Students
+
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -74,7 +87,7 @@ switch ($page){
                                 <i class="bi bi-exclamation-triangle-fill"></i>
                             </div>
                             <div>
-                                <div class="total-students">48</div>
+                                <div class="total-students">NOT WORKING Line 12 to 14</div>
                                 <div class="metric-label">Students with Failed Grade</div>
                             </div>
                         </div>
@@ -87,8 +100,8 @@ switch ($page){
                                 <i class="bi bi-book-fill"></i>
                             </div>
                             <div>
-                                <div class="total-students">12</div>
-                                <div class="metric-label">Total Subjects Being Taught</div>
+                                <div class="total-students"><?php echo $totalSubjects?></div>
+                                <div class="metric-label">Total subjects</div>
                             </div>
                         </div>
                     </div>
@@ -98,7 +111,7 @@ switch ($page){
             <!-- recent activity -->
             <div class="card card-metric">
                 <div class="card-body">
-                    <h6 class="section-title">Recent Activity</h6>
+                    <h6 class="section-title">Recent Activity (not working)</h6>
                     <div class="activity-item">
 
                         <div class="activity-icon" style="background:#e3f9ff;color:#00915c;">
