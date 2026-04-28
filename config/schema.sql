@@ -33,5 +33,20 @@ CREATE TABLE IF NOT EXISTS grades (
 FOREIGN KEY (student_id) REFERENCES students(id),
 FOREIGN KEY (subject_id) REFERENCES subjects(id),
 UNIQUE KEY unique_grade (student_id, subject_id, grade_level)
-); 
+);
+
+INSERT INTO `admin` (`id`, `first_name`, `username`, `password`, `created_at`) VALUES
+(1, 'admin', '$2a$12$4gFiHGreq2GuiITdD5.bPODonA6lbm0nwOjyOSuuVTFHsR1QamHSW', '2026-04-25 01:30:45');
+
+INSERT INTO `subjects` (`id`, `subject_name`, `subject_code`) VALUES
+(1, 'History', 'HIST-101');
+
+INSERT INTO `students` (`id`, `first_name`, `middle_name`, `last_name`, `email`, `grade_level`) VALUES
+(2026001, 'Jhong', 'Viernes', 'Hilario', 'jhonghilarious@domain.com', 'Grade 5');
+
+INSERT INTO `grades` (`id`, `student_id`, `subject_id`, `grade`, `grade_level`) VALUES
+(1, '2026001', '1', 90.1, 'Grade 5');
+
+
+
 
