@@ -100,15 +100,19 @@ switch ($page){
                 <div class="card-body">
                     <h6 class="section-title">Recent Activity</h6>
                     <div class="activity-item">
+
                         <div class="activity-icon" style="background:#e3f9ff;color:#00915c;">
                             <i class="bi bi-pencil-square"></i>
                         </div>
+
                         <div class="activity-content">
                             <div class="activity-text">Maria Garcia submitted grades for Mathematics</div>
                             <div class="activity-time">2 hours ago</div>
                         </div>
                         <span class="badge bg-success badge-activity">Completed</span>
+
                     </div>
+
                     <div class="activity-item">
                         <div class="activity-icon" style="background:#fff3e3;color:#fd7e14;">
                             <i class="bi bi-person-plus-fill"></i>
@@ -119,6 +123,7 @@ switch ($page){
                         </div>
                         <span class="badge bg-primary badge-activity">New</span>
                     </div>
+
                     <div class="activity-item">
                         <div class="activity-icon" style="background:#ffe3e3;color:#dc3545;">
                             <i class="bi bi-exclamation-circle-fill"></i>
@@ -129,6 +134,7 @@ switch ($page){
                         </div>
                         <span class="badge bg-danger badge-activity">Alert</span>
                     </div>
+
                     <div class="activity-item">
                         <div class="activity-icon" style="background:#e3f9ff;color:#00915c;">
                             <i class="bi bi-check-circle-fill"></i>
@@ -139,6 +145,7 @@ switch ($page){
                         </div>
                         <span class="badge bg-success badge-activity">Done</span>
                     </div>
+
                     <div class="activity-item">
                         <div class="activity-icon" style="background:#fff3e3;color:#fd7e14;">
                             <i class="bi bi-calendar-event-fill"></i>
@@ -149,6 +156,7 @@ switch ($page){
                         </div>
                         <span class="badge bg-warning text-dark badge-activity">Scheduled</span>
                     </div>
+                    
                 </div>
             </div>
         </div>
