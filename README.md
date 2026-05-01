@@ -1,8 +1,7 @@
 # Student Management and Grade Analysis System using PHP and MySQL.
-First project in IT 223 – Interactive Programming and Technologies I.
+Project in IT 223 – Interactive Programming and Technologies I.
 
 ## Features
-
 1.Add New Student
 2.Display All Student   
 3.View Individual Student Record
@@ -10,6 +9,11 @@ First project in IT 223 – Interactive Programming and Technologies I.
 5.Sort Functionality
 6.Edit Student Information
 7.Delete Student Record
+
+## Tools used
+- Visual Studio Code for source code editor.
+- Claude Code for bug hunting, logic recomendations, and front-end enhancer. 
+- Git and Github for version control.
 
 ## Setup
 - Download the files and put it into htdocs folder from xampp.
